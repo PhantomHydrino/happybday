@@ -600,6 +600,75 @@ input:-moz-placeholder{
 }
 
 
+.container {
+	position: relative;
+	height: 100vh;
+	background: linear-gradient(45deg, #160042, #3c2261);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	flex-direction: column;
+	border-right: 10px;
+}
+
+
+.word {
+    font-family: 'Leckerli One', cursive;
+	max-height: 100%;
+    max-width: 100%;
+	letter-spacing: 5px;
+    text-align: center;
+	font-size: 8rem;
+	position: absolute;
+	/*background: url("https://i.makeagif.com/media/3-23-2021/g1ALsF.gif");*/
+	background: radial-gradient(
+		circle,
+		#23966c,
+		#faaa54,
+		#e23b4a,
+		#db0768,
+		#360670
+	);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: word 17s infinite ease-in-out;
+}
+
+
+
+.word:nth-child(1) {
+	animation-delay: -17s;
+}
+.word:nth-child(2) {
+	animation-delay: -11s;
+}
+.word:nth-child(3) {
+	animation-delay: -7s;
+}
+.word:nth-child(4) {
+	animation-delay: -3s;
+}
+
+@keyframes word {
+	0%,
+	5%,
+	100% {
+		filter: blur(0px);
+		opacity: 1;
+	}
+	20%,
+	80% {
+		filter: blur(35px);
+		opacity: 0;
+	}
+}
+
+
+
 
 @media only screen and (max-width: 600px) {
     .sugar,.flour {
@@ -654,6 +723,15 @@ input:-moz-placeholder{
 
     #hat{
         left:36%;
+    }
+
+    .container {
+        height: 500px;
+    }
+
+    .word {
+        font-size:60px;
+        text-align: center;
     }
 
   }
